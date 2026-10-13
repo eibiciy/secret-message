@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#f8f6f2">
+    <meta name="description" content="a little something for syfaa ♡">
+    <title>for syfaa ♡</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <audio id="music" loop preload="none">
+        <source src="assets/ihacoy.mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="music-button" id="musicButton" type="button" aria-label="Putar musik" aria-pressed="false" hidden>
+        <span id="musicIcon">♫</span>
+    </button>
+
+    <main>
+        <section class="opening" id="opening">
+            <div class="tiny-star">✦</div>
+            <p class="eyebrow">a little something</p>
+            <h1>hi,<br><em>syfaa.</em></h1>
+            <p class="opening-text">sebenernya aku bingung mau mulai dari mana...</p>
+
+            <div class="music-reminder">
+                <span class="headphone">♫</span>
+                <div>
+                    <strong>one little request</strong>
+                    <p>putar lagunya dulu sebelum lanjut yaa :)</p>
+                </div>
+            </div>
+
+            <button class="start-button" id="startButton" type="button">
+                <span>play &amp; continue</span><span class="button-arrow">→</span>
+            </button>
+            <p class="tiny-note">baca pelan-pelan yaa</p>
+            <p class="music-error" id="musicError" hidden>musiknya belum bisa diputar, tapi kamu tetap bisa lanjut ♡</p>
+        </section>
+
+        <section class="content hidden" id="message" aria-label="Pesan untuk Syfaa">
+            <div class="top-info"><span>for syfaa,</span><span>♡</span></div>
+
+            <section class="scene intro-scene">
+                <p class="hello">halooo syfaa 👋🏻</p>
+                <p>sebenernya aku nggak tau harus mulai dari mana wkwk.</p>
+                <p>jadi...</p>
+                <p class="big-line">yaudah deh, aku ungkapin ajaa.</p>
+                <p>biar lega juga</p>
+            </section>
+
+            <section class="scene">
+                <span class="scene-number">01 — something i noticed</span>
+                <p>aku tuh kagum sama kamu.</p>
+                <p class="big-line">kek kamu tu orang e <em>keren bangett</em> tau.</p>
+                <p>udah pinter akademik, non-akademik e juga gacor.</p>
+            </section>
+
+            <section class="question-scene">
+                <p class="question-label">sometimes i wonder...</p>
+                <h2 class="question">gimana sih kamu<br><em>bagi waktunya??</em></h2>
+                <p class="question-description">serius nanya wkwk, pilih yang paling pengen kamu jawab</p>
+                <div class="choices">
+                    <button class="choice" type="button"><span>01</span>apa nggak capek?</button>
+                    <button class="choice" type="button"><span>02</span>apa nggak kesel?</button>
+                    <button class="choice" type="button"><span>03</span>kapan istirahatnya?</button>
+                </div>
+                <p class="choice-response" id="choiceResponse" hidden>apa pun jawabannya, semoga kamu tetap punya waktu
+                    buat diri sendiri yaa ♡</p>
+            </section>
+
+            <section class="scene">
+                <span class="scene-number">02 — just wondering</span>
+                <p>terus aku juga kadang mikir...</p>
+                <p>kamu nggak pengen main-main gitu?</p>
+                <p class="stacked-text">menikmati masa muda, healing, atau sekadar ngelakuin hal random tanpa mikirin
+                    apa-apa?</p>
+                <p>soalnya dari yang aku lihat, kamu tuh kayak selalu punya aja sesuatu yang dikerjain 😭</p>
+            </section>
+
+            <!-- MINI GAMES -->
+            <section class="games-section" id="miniGames">
+                <p class="game-eyebrow">a little break ♡</p>
+                <h2 class="games-title">okay, time for<br><em>a little challenge.</em></h2>
+                <p class="games-intro">sebelum lanjut, coba dua mini game ini dulu wkwk. penasaran kamu bakal dapet skor
+                    berapa 👀</p>
+
+                <article class="game-card" id="brainGame">
+                    <span class="game-number">GAME 01</span>
+                    <h3>Quick Brain Test 🧠</h3>
+                    <p class="game-description">tes logika singkat. bisa jawab semuanya nggak?</p>
+                    <div class="brain-progress" id="brainProgress">soal 1 dari 3</div>
+                    <h4 class="brain-question" id="brainQuestion">Memuat soal...</h4>
+                    <div class="brain-answers" id="brainAnswers"></div>
+                    <p class="brain-feedback" id="brainFeedback" hidden></p>
+                    <button class="game-button" id="brainNext" type="button" hidden>soal berikutnya →</button>
+                    <button class="game-button" id="brainRestart" type="button" hidden>coba lagi ↻</button>
+                    <p class="game-footnote">santai aja, ini bukan ujian kok 😭</p>
+                </article>
+
+                <article class="game-card reaction-card" id="reactionGame">
+                    <span class="game-number">GAME 02</span>
+                    <h3>Reaction Time ⚡</h3>
+                    <p class="game-description">seberapa cepat refleks kamu? buktiin sini wkwk.</p>
+                    <button class="reaction-area" id="reactionArea" type="button" aria-label="Mulai tes refleks">
+                        <span class="reaction-symbol" id="reactionSymbol">⚡</span>
+                        <span id="reactionText">tap untuk mulai</span>
+                    </button>
+                    <p class="reaction-result" id="reactionResult" aria-live="polite">siapin refleks kamu dulu 👀</p>
+                    <p class="game-footnote">jangan diketuk sebelum warnanya berubah yaa.</p>
+                </article>
+                <p class="games-closing">udah mainnya? lanjut bacaa, masih ada pesan yang pengen aku sampein ♡</p>
+            </section>
+
+            <div class="pause" aria-hidden="true"><span>✦</span>
+                <p>anyway...</p><span>✦</span>
+            </div>
+
+            <section class="scene wishes">
+                <span class="scene-number">03 — what i wish for you</span>
+                <p>aku gamau banyak basa-basi.</p>
+                <p class="big-line">intinya semangat terus ya syfaa.</p>
+                <p>semoga mimpi-mimpi kamu bisa terwujud satu-satu.</p>
+                <p>atau mungkin kalau mau lanjut kuliah, semoga diterima di jurusan dan universitas yang kamu impikan.
+                </p>
+            </section>
+
+            <section class="scene encouragement">
+                <span class="scene-number">04 — rooting for you ♡</span>
+                <p>eh iya, bentar lagi TKA juga kan?</p>
+                <p class="big-line">semangatt TKA-nya yaa, syfaa!</p>
+                <p>semoga nanti nilainya bagus, hasilnya sesuai yang kamu harapin, dan semua usaha kamu selama ini
+                    kebayar.</p>
+                <p>kalau ada soal yang bikin pusing, jangan langsung ngerasa nggak bisa yaa. percaya sama diri sendiri
+                    juga.</p>
+                <div class="encouragement-divider">✳</div>
+                <p>terus semangat juga buat PKL-nyaa!</p>
+                <p class="big-line">semoga banyak pengalaman seru yang nunggu kamu.</p>
+                <p>semoga ketemu orang-orang baik, dapet ilmu baru, dan semua urusannya dilancarin. pelan-pelan aja,
+                    nggak harus selalu bisa semuanya sekaligus wkwk.</p>
+            </section>
+
+            <aside class="reminder">
+                <div class="reminder-star">✦</div>
+                <p>satu hal lagi...</p>
+                <h2>jangan lupa punya waktu buat diri sendiri.</h2>
+                <p>buat istirahat, main, ketawa-ketawa, atau sekadar menikmati hari tanpa harus mikirin apa-apa.</p>
+            </aside>
+
+            <section class="scene ending-message">
+                <p>pokoknya aku cuma pengen bilang itu ajaa.</p>
+                <p>maaf aku gabisa ngasih tau aku siapa.</p>
+                <p>aku gamau ngerusak pertemanan(?) atau buat kita jadi canggung.</p>
+            </section>
+
+            <section class="secret">
+                <p class="secret-small">so for now...</p>
+                <p class="secret-main">cukup tahu kalau</p>
+                <h2 class="secret-highlight">ada seseorang yang ternyata kagum sama kamu dari jauh.</h2>
+                <p class="signature">— secret admirer</p>
+            </section>
+
+            <aside class="ps">
+                <span>P.S.</span>
+                <p>kamu nggak perlu buru-buru cari tahu siapa aku kok.</p>
+                <p>anggap aja ini pesan kecil dari seseorang yang cuma pengen bilang...</p>
+                <strong>you're doing great. 🤍</strong>
+            </aside>
+
+            <footer class="final">
+                <div class="final-star">✦</div>
+                <p>that's all.</p>
+                <span>take care, syfaa.</span>
+            </footer>
+        </section>
+    </main>
+</body>
+
+</html>
